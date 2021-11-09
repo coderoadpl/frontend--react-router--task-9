@@ -1,14 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { useUser } from '../../contexts/UserContext'
+
 import classes from './styles.module.css'
 
 export const PageLogin = (props) => {
   const {
     className,
-    onLogInClick,
     ...otherProps
   } = props
+
+  const { logIn } = useUser()
 
   return (
     <div
@@ -17,7 +20,7 @@ export const PageLogin = (props) => {
     >
       PageLogin
       <button
-        onClick={onLogInClick}
+        onClick={logIn}
       >
         CLICK TO LOG IN
       </button>
@@ -26,8 +29,7 @@ export const PageLogin = (props) => {
 }
 
 PageLogin.propTypes = {
-  className: PropTypes.string,
-  onLogInClick: PropTypes.func
+  className: PropTypes.string
 }
 
 export default PageLogin

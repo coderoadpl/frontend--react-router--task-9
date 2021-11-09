@@ -3,17 +3,20 @@ import PropTypes from 'prop-types'
 
 import { Navigate } from 'react-router-dom'
 
+import { useUser } from '../../contexts/UserContext'
+
 import classes from './styles.module.css'
 
 export const PageLogout = (props) => {
   const {
     className,
-    onLogOut,
     ...otherProps
   } = props
 
+  const { logOut } = useUser()
+
   React.useEffect(() => {
-    onLogOut()
+    logOut()
     // mount-only
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -31,8 +34,7 @@ export const PageLogout = (props) => {
 }
 
 PageLogout.propTypes = {
-  className: PropTypes.string,
-  onLogOut: PropTypes.func
+  className: PropTypes.string
 }
 
 export default PageLogout

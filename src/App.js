@@ -14,7 +14,7 @@ import PageMoviesSearchResults from './pages/PageMoviesSearchResults'
 import { useUser } from './contexts/UserContext'
 
 export const App = () => {
-  const { isUserLoggedIn, logIn, logOut } = useUser()
+  const { isUserLoggedIn } = useUser()
 
   return (
     <div>
@@ -43,13 +43,13 @@ export const App = () => {
       <Routes>
         <Route
           path={'/logout'}
-          element={<PageLogout onLogOut={logOut} />}
+          element={<PageLogout />}
         />
         {
           !isUserLoggedIn ?
             <Route
               path={'/'}
-              element={<PageLogin onLogInClick={logIn} />}
+              element={<PageLogin />}
             />
             :
             <>
