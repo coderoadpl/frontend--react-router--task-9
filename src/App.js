@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, NavLink } from 'react-router-dom'
 
 import PageHome from './pages/PageHome'
 import PageMoviesSearch from './pages/PageMoviesSearch'
@@ -11,14 +11,24 @@ export const App = () => {
       <nav>
         <ul>
           <li>
-            <Link to={'/'}>
+            <NavLink
+              to={'/'}
+              style={({ isActive }) => ({
+                fontWeight: isActive ? 700 : 400
+              })}
+            >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to={'/movies/search'}>
+            <NavLink
+              to={'/movies/search'}
+              style={({ isActive }) => ({
+                fontWeight: isActive ? 700 : 400
+              })}
+            >
               Movies search
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>
