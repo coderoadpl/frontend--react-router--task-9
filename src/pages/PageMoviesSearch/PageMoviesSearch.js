@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Outlet } from 'react-router-dom'
 
 import classes from './styles.module.css'
 
@@ -24,6 +24,7 @@ export const PageMoviesSearch = (props) => {
         value={searchPhrase || ''}
         onChange={(e) => navigate(e.target.value.replaceAll('/', ''))}
       />
+      <Outlet />
     </div>
   )
 }

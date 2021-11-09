@@ -32,11 +32,12 @@ export const App = () => {
         <Route
           path={'/movies/search'}
           element={<PageMoviesSearch />}
-        />
-        <Route
-          path={'/movies/search/:searchPhrase'}
-          element={<PageMoviesSearchResults />}
-        />
+        >
+          <Route
+            path={':searchPhrase'}
+            element={<PageMoviesSearchResults />}
+          />
+        </Route>
       </Routes>
     </div>
   )
