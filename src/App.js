@@ -11,25 +11,10 @@ import PageHome from './pages/PageHome'
 import PageMoviesSearch from './pages/PageMoviesSearch'
 import PageMoviesSearchResults from './pages/PageMoviesSearchResults'
 
+import { useUser } from './contexts/UserContext'
+
 export const App = () => {
-  const [isUserLoggedIn, setUserLoggedIn] = React.useState(
-    localStorage.getItem('isUserLoggedIn') === 'true'
-  )
-
-  const logIn = React.useCallback(() => {
-    setUserLoggedIn(true)
-  }, [])
-  const logOut = React.useCallback(() => {
-    setUserLoggedIn(false)
-  }, [])
-
-  React.useEffect(() => {
-    if (isUserLoggedIn === true) {
-      localStorage.setItem('isUserLoggedIn', 'true')
-    } else {
-      localStorage.removeItem('isUserLoggedIn')
-    }
-  }, [isUserLoggedIn])
+  const { isUserLoggedIn, logIn, logOut } = useUser()
 
   return (
     <div>

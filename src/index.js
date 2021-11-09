@@ -3,15 +3,19 @@ import ReactDOM from 'react-dom'
 
 import { BrowserRouter as Router } from 'react-router-dom'
 
+import UserContextProvider from './contexts/UserContext'
+
 import App from './App'
 
 import './index.css'
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <UserContextProvider>
+    <Router>
+      <App />
+    </Router>
+  </UserContextProvider>,
   document.getElementById('root')
 )
 
