@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { useParams, useNavigate } from 'react-router-dom'
+
 import classes from './styles.module.css'
 
 export const PageMoviesSearch = (props) => {
@@ -9,12 +11,19 @@ export const PageMoviesSearch = (props) => {
     ...otherProps
   } = props
 
+  const { searchPhrase } = useParams()
+  const navigate = useNavigate()
+
   return (
     <div
       className={`${classes.root}${className ? ` ${className}` : ''}`}
       {...otherProps}
     >
       PageMoviesSearch
+      <input
+        value={searchPhrase || ''}
+        onChange={(e) => navigate(e.target.value.replaceAll('/', ''))}
+      />
     </div>
   )
 }
