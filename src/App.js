@@ -7,6 +7,7 @@ import NavLink from './components/NavLink'
 
 import PageHome from './pages/PageHome'
 import PageMoviesSearch from './pages/PageMoviesSearch'
+import PageMoviesSearchResults from './pages/PageMoviesSearchResults'
 
 export const App = () => {
   return (
@@ -31,6 +32,10 @@ export const App = () => {
         <Route
           path={'/movies/search'}
           element={<PageMoviesSearch />}
+        />
+        <Route
+          path={'/movies/search/:searchPhrase'}
+          element={<PageMoviesSearchResults />}
         />
       </Routes>
     </div>
