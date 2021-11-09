@@ -8,6 +8,20 @@ import PageMoviesSearch from './pages/PageMoviesSearch'
 export const App = () => {
   return (
     <div>
+      <nav>
+        <ul>
+          <li>
+            <a href={'/'}>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href={'/movies/search'}>
+              Movies search
+            </a>
+          </li>
+        </ul>
+      </nav>
       <Routes>
         <Route
           path={'/'}
