@@ -62,6 +62,14 @@ export const App = () => {
                 element={<PageMoviesSearch />}
               >
                 <Route
+                  index={true}
+                  element={
+                    <p>
+                      Start typing to search our movies database!
+                    </p>
+                  }
+                />
+                <Route
                   path={':searchPhrase'}
                   element={<PageMoviesSearchResults />}
                 />
