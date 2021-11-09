@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import NavLink from './components/NavLink'
 
+import Page404 from './pages/Page404'
 import PageLogout from './pages/PageLogout'
 import PageLogin from './pages/PageLogin'
 import PageHome from './pages/PageHome'
@@ -41,14 +42,10 @@ export const App = () => {
           null
       }
       <Routes>
-        <Route
-          path={'/logout'}
-          element={<PageLogout />}
-        />
         {
           !isUserLoggedIn ?
             <Route
-              path={'/'}
+              path={'*'}
               element={<PageLogin />}
             />
             :
@@ -74,6 +71,14 @@ export const App = () => {
                   element={<PageMoviesSearchResults />}
                 />
               </Route>
+              <Route
+                path={'/logout'}
+                element={<PageLogout />}
+              />
+              <Route
+                path={'*'}
+                element={<Page404 />}
+              />
             </>
         }
       </Routes>
