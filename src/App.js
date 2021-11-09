@@ -1,6 +1,9 @@
 import React from 'react'
 
-import { Routes, Route, NavLink } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
+
+import NavBar from './components/NavBar'
+import NavLink from './components/NavLink'
 
 import PageHome from './pages/PageHome'
 import PageMoviesSearch from './pages/PageMoviesSearch'
@@ -8,30 +11,18 @@ import PageMoviesSearch from './pages/PageMoviesSearch'
 export const App = () => {
   return (
     <div>
-      <nav>
-        <ul>
-          <li>
-            <NavLink
-              to={'/'}
-              style={({ isActive }) => ({
-                fontWeight: isActive ? 700 : 400
-              })}
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to={'/movies/search'}
-              style={({ isActive }) => ({
-                fontWeight: isActive ? 700 : 400
-              })}
-            >
-              Movies search
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
+      <NavBar>
+        <NavLink
+          to={'/'}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to={'/movies/search'}
+        >
+          Movies search
+        </NavLink>
+      </NavBar>
       <Routes>
         <Route
           path={'/'}
