@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 
 import PageHome from './pages/PageHome'
 import PageMoviesSearch from './pages/PageMoviesSearch'
@@ -11,14 +11,14 @@ export const App = () => {
       <nav>
         <ul>
           <li>
-            <a href={'/'}>
+            <Link to={'/'}>
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href={'/movies/search'}>
+            <Link to={'/movies/search'}>
               Movies search
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
